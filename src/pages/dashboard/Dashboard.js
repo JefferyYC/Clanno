@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useGroup } from "./useGroup"
+import { useCreateGroup } from "./hooks/useCreateGroup"
 import { useMember } from "../../hooks/useMember"
 import MemberList from '../../components/MemberList'
 
@@ -7,7 +7,7 @@ import "./Dashboard.css"
 
 export default function Dashboard() {
     const [email, setEmail] = useState('')
-    const { addUserToGroup, isPending, error } = useGroup()
+    const { addUserToGroup, isPending, error } = useCreateGroup()
     const { documents } = useMember()
 
     const handleSubmit = (e) => {

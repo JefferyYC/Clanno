@@ -1,3 +1,5 @@
+// context provider for firestore authorization data
+
 import { createContext, useReducer, useEffect } from 'react'
 import { auth } from '../firebase/config'
 import { onAuthStateChanged } from "firebase/auth"
@@ -30,7 +32,7 @@ export const AuthContextProvider = ({ children }) => {
     })
   }, [])
 
-  console.log('AuthContext state:', state)
+  // console.log('AuthContext state:', state)
   
   return (
     <AuthContext.Provider value={{ ...state, dispatch }}>

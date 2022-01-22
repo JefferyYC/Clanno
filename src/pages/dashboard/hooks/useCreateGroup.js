@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
-import { useAuthContext } from "../../hooks/useAuthContext"
+import { useUserContext } from "../../../hooks/useUserContext"
 
-import { db } from "../../firebase/config"
-import { collection, query, where, doc, getDoc, getDocs, addDoc, updateDoc, arrayUnion } from "firebase/firestore";
+import { db } from "../../../firebase/config"
+import { collection, query, where, doc, getDocs, addDoc, updateDoc, arrayUnion } from "firebase/firestore";
 
-export const useGroup = () => {
+export const useCreateGroup = () => {
     const [isCancelled, setIsCancelled] = useState(false)
     const [error, setError] = useState(null)
     const [isPending, setIsPending] = useState(false)
-    const { user } = useAuthContext()
+    const { id: curUid, groupId: curGid } = useUserContext()
 
     const addUserToGroup = async (email) => {
         setError(null)
@@ -16,13 +16,10 @@ export const useGroup = () => {
 
         try {
             //logic for fetching cur user and new user doc, grabbing the ids
-            const curUser = await getDoc(doc(db, "users", user.uid))
             const q = query(collection(db, "users"), where("email", "==", email))
             const querySnapshot = await getDocs(q)
             const newUser = querySnapshot.docs[0]  // assume only one matching user
 
-            let curUid = curUser.id
-            let curGid = curUser.data().groupId
             let newUid = newUser.id
             let newGid = newUser.data().groupId
 
