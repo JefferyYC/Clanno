@@ -1,0 +1,21 @@
+.add-user-form {
+    margin-top: 40px;
+}
+
+.add-user-form .title {
+    font-size: 1em;
+    color: var(--heading-color);
+    display: inline-block;
+  }
+
+.add-user-form form {
+    margin-top: 40px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.05);
+    background: #fff;
+}
+
+.add-user-form label {
+    margin-top: 0px
+}
