@@ -13,6 +13,7 @@ export default function Dashboard() {
     const handleSubmit = (e) => {
         e.preventDefault()
         addUserToGroup(email)
+        setEmail('')
       }
       
     return (

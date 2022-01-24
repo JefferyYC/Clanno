@@ -20,19 +20,31 @@
     color: var(--text-color);
     font-size: 0.9em;
   }
-  .member-list .assigned-to {
-    margin-top: 20px;
-    padding-top: 10px;
-    border-top: 1px solid #eee;
-  }
-  .member-list ul {
-    margin: 10px 0;
-    display: flex;
-  }
-  .member-list li {
-    margin-right: 10px;
-  }
   .member-list .avatar {
     width: 30px;
     height: 30px;
+  }
+
+  /* submission status */
+  .member-list .status {
+    display: flex;
+    align-items: center;
+  }
+  .member-list .submitted {
+    display: inline-block;
+    margin-right: 10px;
+    width: 12px;
+    height: 12px;
+    background: #0ebb50;
+    border-radius: 50%;
+    margin-top: 2px;
+  }
+  .member-list .not-submitted {
+    display: inline-block;
+    margin-right: 10px;
+    width: 12px;
+    height: 12px;
+    background: #d61334;
+    border-radius: 50%;
+    margin-top: 2px;
   }

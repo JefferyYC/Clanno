@@ -31,7 +31,8 @@ export const useSignup = () => {
         online: true,
         displayName,
         email,
-        groupId: null
+        groupId: null,
+        submitted: false
       })
 
       // dispatch login action
