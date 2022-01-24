@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useUserContext } from "../../../hooks/useUserContext"
 
 import { db } from "../../../firebase/config"
-import { collection, query, where, doc, getDocs, addDoc, updateDoc, arrayUnion } from "firebase/firestore";
+import { collection, query, where, doc, getDocs, addDoc, updateDoc, arrayUnion, Timestamp } from "firebase/firestore";
 
 export const useCreateGroup = () => {
     const [isCancelled, setIsCancelled] = useState(false)
@@ -25,7 +25,8 @@ export const useCreateGroup = () => {
 
             if (!curGid&& !newGid) {    // neither is in a group
                 const groupRef = await addDoc(collection(db, "groups"), {
-                    users:[curUid, newUid]
+                    users:[curUid, newUid],
+                    initiated: Timestamp.now()
                 })
                 updateDoc(doc(db, "users", curUid), {
                     groupId: groupRef.id

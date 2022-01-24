@@ -5,6 +5,8 @@ import { auth, db } from '../firebase/config'
 import { doc, setDoc } from "firebase/firestore"
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"
 
+import { UNINITIATED } from '../constants/SurveyStatus'
+
 export const useSignup = () => {
   const [isCancelled, setIsCancelled] = useState(false)
   const [error, setError] = useState(null)
@@ -32,7 +34,7 @@ export const useSignup = () => {
         displayName,
         email,
         groupId: null,
-        submitted: false
+        surveyStatus: UNINITIATED
       })
 
       // dispatch login action

@@ -44,6 +44,15 @@
     margin-right: 10px;
     width: 12px;
     height: 12px;
+    background: #bebc17;
+    border-radius: 50%;
+    margin-top: 2px;
+  }
+  .member-list .not-initiated {
+    display: inline-block;
+    margin-right: 10px;
+    width: 12px;
+    height: 12px;
     background: #d61334;
     border-radius: 50%;
     margin-top: 2px;
