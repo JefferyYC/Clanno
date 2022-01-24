@@ -54,10 +54,6 @@ export const useCreateGroup = () => {
                 }
             }
 
-            if (!q) {
-                throw new Error('Could not complete signup')
-            }
-
             if (!isCancelled) {
                 setIsPending(false)
                 setError(null)
