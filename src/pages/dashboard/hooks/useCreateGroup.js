@@ -26,7 +26,7 @@ export const useCreateGroup = () => {
             if (!curGid&& !newGid) {    // neither is in a group
                 const groupRef = await addDoc(collection(db, "groups"), {
                     users:[curUid, newUid],
-                    initiated: Timestamp.now()
+                    created: Timestamp.now()
                 })
                 updateDoc(doc(db, "users", curUid), {
                     groupId: groupRef.id

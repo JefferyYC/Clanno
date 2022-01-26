@@ -25,7 +25,7 @@ export default function SurveyForm() {
                 />
             </label>
             <label>
-                <span>Why did you rate like that ?</span>
+                <span>What is something that makes you happy this week?</span>
                 <input
                 required
                 type="text" 
@@ -34,7 +34,7 @@ export default function SurveyForm() {
                 />
             </label>
             <label>
-                <span>You are selected to DIY a question for your pillow group this week!</span>
+                <span>What are you looking forward to next week ?</span>
                 <input
                 required
                 placeholder="Type your question here"
