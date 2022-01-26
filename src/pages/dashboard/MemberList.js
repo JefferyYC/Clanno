@@ -1,6 +1,6 @@
 //harcoded
-import AvatarIcon from '../assets/avatar_male.svg'
-import Avatar from './Avatar'
+import AvatarIcon from '../../assets/avatar_male.svg'
+import Avatar from '../../components/Avatar'
 
 // styles
 import './MemberList.css'

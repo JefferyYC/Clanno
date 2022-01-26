@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { useCreateGroup } from "./hooks/useCreateGroup"
 import { useMember } from "../../hooks/useMember"
-import MemberList from '../../components/MemberList'
-
+import MemberList from './MemberList'
 import "./Dashboard.css"
 
 export default function Dashboard() {

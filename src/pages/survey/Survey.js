@@ -1,5 +1,5 @@
 import { useUserContext } from '../../hooks/useUserContext'
-import SurveyForm from '../../components/SurveyForm'
+import SurveyForm from './SurveyForm'
 import { useInitiateSurvey } from './hooks/useInitiateSurvey'
 
 // styles
@@ -18,6 +18,7 @@ export default function Survey() {
         </>
         }
         {surveyStatus===1 && <SurveyForm />}
+        {surveyStatus===2 && <p>Congratuations on submitting this week's survey!</p>}
     </>
   )
 }
