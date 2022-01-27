@@ -8,7 +8,7 @@ export const useCreateGroup = () => {
     const [isCancelled, setIsCancelled] = useState(false)
     const [error, setError] = useState(null)
     const [isPending, setIsPending] = useState(false)
-    const { id: curUid, groupId: curGid } = useUserContext()
+    const { id: curUid, groupId: curGid, surveyStatus: curSurveyStatus } = useUserContext()
 
     const addUserToGroup = async (email) => {
         setError(null)
@@ -22,6 +22,7 @@ export const useCreateGroup = () => {
 
             let newUid = newUser.id
             let newGid = newUser.data().groupId
+            let newSurveyStatus = newUser.data().surveyStatus
 
             if (!curGid&& !newGid) {    // neither is in a group
                 const groupRef = await addDoc(collection(db, "groups"), {
@@ -41,7 +42,8 @@ export const useCreateGroup = () => {
                     })
 
                     updateDoc(doc(db, "users", newUid), {
-                        groupId: curGid
+                        groupId: curGid,
+                        surveyStatus: curSurveyStatus === 0 ? 0 : 1
                     })
                 } else if (!curGid) {
                     await updateDoc(doc(db, "groups", newGid), {
@@ -49,7 +51,8 @@ export const useCreateGroup = () => {
                     })
 
                     updateDoc(doc(db, "users", curUid), {
-                        groupId: newGid
+                        groupId: newGid,
+                        surveyStatus: newSurveyStatus === 0 ? 0 : 1
                     })
                 }
             }
