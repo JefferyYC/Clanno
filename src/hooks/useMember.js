@@ -5,6 +5,7 @@ import { useUserContext } from "./useUserContext"
 
 export const useMember = () => {
     const [documents, setDocuments] = useState([])
+    const [allSubmit, setAllSubmit] = useState(false)
     const [error, setError] = useState(null)
     const { groupId } = useUserContext()
 
@@ -17,6 +18,7 @@ export const useMember = () => {
                   snapshot.docs.forEach(doc => {
                     results.push({...doc.data(), id: doc.id})
                   });
+                  setAllSubmit(results.reduce((prev, cur) => prev.surveyStatus===2 && cur.surveyStatus===2))
                   
                   // update state
                   setDocuments(results)
@@ -35,5 +37,5 @@ export const useMember = () => {
         }
   }, [groupId])
 
-    return { documents, error }
+    return { documents, error, allSubmit }
 }
