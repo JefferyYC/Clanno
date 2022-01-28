@@ -20,9 +20,21 @@ export const useSubmitSurvey = () => {
             let q3 = "survey1.q3"
 
             updateDoc(ref, {
-               [q1]: arrayUnion({[id]: [displayName, a1]}),
-               [q2]: arrayUnion({[id]: [displayName, a2]}),
-               [q3]: arrayUnion({[id]: [displayName, a3]})
+               [q1]: arrayUnion({
+                   id,
+                   displayName,
+                   answer: a1
+                }),
+               [q2]: arrayUnion({
+                    id,
+                    displayName,
+                    answer: a2                
+                }),
+                [q3]: arrayUnion({
+                    id,
+                    displayName,
+                    answer: a3               
+                })
             })
 
             updateDoc(doc(db, "users", id), {

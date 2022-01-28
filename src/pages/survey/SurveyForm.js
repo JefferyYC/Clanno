@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useSubmitSurvey } from './hooks/useSubmitSurvey'
+import { Q_ONE, Q_TWO, Q_THREE } from '../../constants/SurveyQuestions'
 
 //styles
 import "./SurveyForm.css"
@@ -22,7 +23,7 @@ export default function SurveyForm() {
         <form onSubmit={handleSubmit} className="survey-form">
             <h2>Your Pillow Survey</h2>
             <label>
-                <span>Rate your week from 1 to 5 !</span>
+                <span>{Q_ONE}</span>
                 <input
                 required 
                 type="number" 
@@ -31,7 +32,7 @@ export default function SurveyForm() {
                 />
             </label>
             <label>
-                <span>What is something that makes you happy this week?</span>
+                <span>{Q_TWO}</span>
                 <input
                 required
                 placeholder="A great meal? A completed project?"
@@ -41,7 +42,7 @@ export default function SurveyForm() {
                 />
             </label>
             <label>
-                <span>What are you looking forward to next week ?</span>
+                <span>{Q_THREE}</span>
                 <input
                 required
                 placeholder="Meeting a friend? Having some rest? ... "

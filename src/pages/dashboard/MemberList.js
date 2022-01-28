@@ -1,3 +1,4 @@
+import { UNINITIATED, UNSUBMITTED, SUBMITTED } from '../../constants/SurveyStatus'
 //harcoded
 import AvatarIcon from '../../assets/avatar_male.svg'
 import Avatar from '../../components/Avatar'
@@ -16,12 +17,12 @@ export default function MemberList({ members }) {
             <h4>{m.displayName}</h4>
             <p>Feeling happy!</p>
             <div className="status">
-              {m.surveyStatus === 0 && <span className="not-initiated"></span>}
-              {m.surveyStatus === 1 && <span className="not-submitted"></span>}
-              {m.surveyStatus === 2 && <span className="submitted"></span>}
-              {m.surveyStatus === 0 && <p>Survey Not Initiated...</p>}
-              {m.surveyStatus === 1 && <p>Survey Not Submitted...</p>}
-              {m.surveyStatus === 2 && <p>Survey Submitted!</p>}
+              {m.surveyStatus === UNINITIATED && <span className="not-initiated"></span>}
+              {m.surveyStatus === UNSUBMITTED && <span className="not-submitted"></span>}
+              {m.surveyStatus === SUBMITTED && <span className="submitted"></span>}
+              {m.surveyStatus === UNINITIATED && <p>Survey Not Initiated...</p>}
+              {m.surveyStatus === UNSUBMITTED && <p>Survey Not Submitted...</p>}
+              {m.surveyStatus === SUBMITTED && <p>Survey Submitted!</p>}
             </div>
         </div>        
         ))}

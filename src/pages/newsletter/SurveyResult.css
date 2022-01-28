@@ -1,0 +1,13 @@
+.question{
+    margin: 40px;
+}
+
+.question h4 {
+    font-size: 0.9em;
+    color: var(--heading-color);
+  }
+
+  .question p {
+    color: var(--text-color);
+    font-size: 0.9em;
+  }

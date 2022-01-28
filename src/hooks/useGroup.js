@@ -1,29 +1,20 @@
 import { useEffect, useState } from "react"
 import { db } from "../firebase/config"
-import { collection, onSnapshot, query, where } from "firebase/firestore"
+import { doc, onSnapshot } from "firebase/firestore"
 import { useUserContext } from "./useUserContext"
-import { SUBMITTED } from "../constants/SurveyStatus"
 
-export const useMember = () => {
+export const useGroup = () => {
     const [documents, setDocuments] = useState([])
-    const [allSubmit, setAllSubmit] = useState(false)
     const [error, setError] = useState(null)
     const { groupId } = useUserContext()
 
     useEffect(() => {
         try {
             if (groupId) {
-              let ref = query(collection(db, "users"), where("groupId", "==", groupId))
+              let ref = doc(db, "groups", groupId)
               const unsubscribe = onSnapshot(ref, (snapshot) => {
-                  let results = []  
-                  snapshot.docs.forEach(doc => {
-                    results.push({...doc.data(), id: doc.id})
-                  });
-                  
-                  setAllSubmit(results.every(d => d.surveyStatus===SUBMITTED))
-                  
                   // update state
-                  setDocuments(results)
+                  setDocuments(snapshot.data())
                   setError(null)
                 }, error => {
                   console.log(error)
@@ -39,5 +30,5 @@ export const useMember = () => {
         }
   }, [groupId])
 
-    return { documents, error, allSubmit }
+    return { documents, error }
 }

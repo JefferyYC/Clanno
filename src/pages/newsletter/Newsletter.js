@@ -1,4 +1,5 @@
 import { useMember } from "../../hooks/useMember"
+import SurveyResult from "./SurveyResult"
 
 export default function Newsletter() {
     const { allSubmit } = useMember()
@@ -6,7 +7,7 @@ export default function Newsletter() {
     return (
         <div>
             {!allSubmit && <p>Your pillow newsletter is still pending responses from some members...</p>}
-            {allSubmit && <p> Your pillow newsletter is ready! </p>}
+            {allSubmit && <SurveyResult />}
         </div>
     )
 }
