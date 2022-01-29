@@ -23,6 +23,7 @@ export const useInitiateSurvey = () => {
             q1: [],
             q2: [],
             q3: [],
+            comments: [],
             initiated: Timestamp.now()
         }
         try {
