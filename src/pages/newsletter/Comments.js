@@ -5,6 +5,7 @@ import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 import { useAddComments } from "./hooks/useAddComments"
 import { useGroup } from "../../hooks/useGroup"
 import { Timestamp } from "firebase/firestore";
+import { useCurrentWeek } from "../../hooks/useCurrentWeek"
 
 // hardcoded avatar icon
 import AvatarIcon from '../../assets/avatar_male.svg'
@@ -17,8 +18,9 @@ export default function Comments() {
   const { addComments, error } = useAddComments() 
   const [newComment, setNewComment] = useState('')
   const { documents } = useGroup()
+  const { curWeek } = useCurrentWeek()
 
-  let surveyName = "survey1"
+  const surveyName = "survey" + curWeek
   let surveyResult = documents[surveyName]
 
   const handleSubmit = async (e) => {
@@ -28,7 +30,7 @@ export default function Comments() {
       displayName: user.displayName,
       content: newComment,
       createdAt: Timestamp.now(),
-      id: user.uid
+      id: Math.random()
     }
     
     await addComments(commentToAdd)

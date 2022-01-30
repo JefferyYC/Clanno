@@ -1,12 +1,14 @@
 import { useGroup } from "../../hooks/useGroup"
 import { Q_ONE, Q_TWO, Q_THREE} from "../../constants/SurveyQuestions"
+import { useCurrentWeek } from "../../hooks/useCurrentWeek"
 
 //styles
 import './SurveyResult.css'
 
 export default function SurveyResult() {
     
-    let surveyName = "survey1"
+    const { curWeek }= useCurrentWeek()
+    const surveyName = "survey" + curWeek
     const { documents } = useGroup()
     let surveyResult = documents[surveyName]
 

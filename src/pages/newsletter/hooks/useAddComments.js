@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react'
 import { db } from "../../../firebase/config"
 import { doc, updateDoc, arrayUnion } from "firebase/firestore";
 import { useUserContext } from '../../../hooks/useUserContext';
+import { useCurrentWeek } from '../../../hooks/useCurrentWeek';
 
 export const useAddComments = () => {
     const [isCancelled, setIsCancelled] = useState(false)
     const [error, setError] = useState(null)
     const [isPending, setIsPending] = useState(false)
     const { groupId } = useUserContext()
+    const { curWeek } = useCurrentWeek()
 
     const addComments = async (comment) => {
         setError(null)
@@ -15,7 +17,7 @@ export const useAddComments = () => {
 
         console.log("to be add: ", comment)
 
-        let commentField = "survey1.comments"
+        const commentField = "survey" + curWeek + ".comments"
 
         try {
             const ref = doc(db, "groups", groupId)

@@ -38,6 +38,9 @@
     color: var(--text-color);
     font-size: 0.9em;
   }
+  .add-comment {
+    font-size: 0.9em;
+  }
   
   /* comments scrollbar */
   .project-comments {
