@@ -4,7 +4,7 @@ import { useAuthContext } from '../hooks/useAuthContext'
 
 //styles
 import './Navbar.css'
-import Temple from '../assets/temple.svg'
+import Temple from '../assets/pillow.svg'
 
 export default function Navbar() {
     const navigate = useNavigate()

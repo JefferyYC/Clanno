@@ -9,13 +9,11 @@ import './MemberList.css'
 export default function MemberList({ members }) {
   return (
     <div className="member-list">
-      {members.length === 0 && <p>There is no members in your pillow group yet. Start your journey of better family communication
-        by adding new members to your pillow group!</p>}
+      {members.length === 0 && <p>You are not in a pillow group yet. Start your journey with Pillow now!</p>}
       {members.map(m => (
         <div key={m.id} className="card">
             <Avatar src={AvatarIcon}/>
             <h4>{m.displayName}</h4>
-            <p>Feeling happy!</p>
             <div className="status">
               {m.surveyStatus === UNINITIATED && <span className="not-initiated"></span>}
               {m.surveyStatus === UNSUBMITTED && <span className="not-submitted"></span>}

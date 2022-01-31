@@ -1,0 +1,9 @@
+.intro {
+    margin: 40px;
+}
+
+.intro p {
+    font-size: 1em;
+    color: var(--heading-color);
+    display: inline-block;
+}

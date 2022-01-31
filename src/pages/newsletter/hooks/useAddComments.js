@@ -15,8 +15,6 @@ export const useAddComments = () => {
         setError(null)
         setIsPending(true)
 
-        console.log("to be add: ", comment)
-
         const commentField = "survey" + curWeek + ".comments"
 
         try {

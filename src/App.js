@@ -6,7 +6,6 @@ import Login from './pages/login/Login'
 import Signup from './pages/signup/Signup'
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
-import OnlineUsers from './components/OnlineUsers'
 import { useAuthContext } from './hooks/useAuthContext';
 
 //Styles
@@ -30,7 +29,6 @@ function App() {
             <Route path="/signup" element={user ? <Navigate to="/" /> : <Signup />} />
           </Routes>
         </div>
-        {user && <OnlineUsers />}
       </BrowserRouter>
         }
     </div>

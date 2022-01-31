@@ -20,7 +20,8 @@ export default function Dashboard() {
         <h2 className="page-title">My Pillow Home</h2>
         {documents && <MemberList members={documents} />}
         <div className="add-user-form">
-          <p className="title">Invite a new member or join someone else's pillow group by email</p>
+          <p className="title">Start a new group by inviting members through email <br />Or<br />
+          Join an existing group by email of any members of that group</p>
           <form onSubmit={handleSubmit}>
             <label>
               <span>email:</span>
@@ -31,7 +32,7 @@ export default function Dashboard() {
                 value={email} 
               />
             </label>
-            {!isPending && <button className="btn">Join My Pillow Group!</button>}
+            {!isPending && <button className="btn">Join Pillow Group!</button>}
             {isPending && <button className="btn" disabled>Loading...</button>}
             {error && <p className="error">{error}</p>}
           </form>
