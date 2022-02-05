@@ -54,7 +54,7 @@ export const useInitiateSurvey = () => {
         } catch(err) {
             if (!isCancelled) {
                 // setError(err.message)
-                setError("Failed to initiated survey!")
+                setError("Oops! Failed to initiate survey. Make sure you are in a group.")
                 setIsPending(false)
                 console.log(err)
             }

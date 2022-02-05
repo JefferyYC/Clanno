@@ -7,7 +7,7 @@ import './Survey.css'
 
 export default function Survey() {
   const { groupId, surveyStatus } = useUserContext()
-  const { initiateSurvey } = useInitiateSurvey()
+  const { initiateSurvey, error } = useInitiateSurvey()
 
   return (
     <>
@@ -20,6 +20,7 @@ export default function Survey() {
         <>
           <p>Nobody has initiated the pillow survey for this week...</p>
           <button className="btn" onClick={() => initiateSurvey(groupId)}>Initate Survey!</button>
+          {error && <p className="error">{error}</p>}
         </>
         }
         {surveyStatus===1 && <SurveyForm />}

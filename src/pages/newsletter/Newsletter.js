@@ -10,7 +10,9 @@ export default function Newsletter() {
 
     return (
         <div>
-            {!allSubmit && <p>Your pillow newsletter is still pending responses from some members...</p>}
+            {!allSubmit && 
+            <p className="intro">Pillow newsletter is where the survey results of your group would be released after every member has answered.<br />
+            Your pillow newsletter is still pending responses from some members...</p>}
             {allSubmit && 
             <div className="news-letter">
                 <SurveyResult />
