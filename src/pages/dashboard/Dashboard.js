@@ -17,7 +17,7 @@ export default function Dashboard() {
       
     return (
       <>
-        <h2 className="page-title">My Pillow Home</h2>
+        <h2 className="page-title">My Clanno Home</h2>
         {documents && <MemberList members={documents} />}
         <div className="add-user-form">
           <p className="title">Start a new group by inviting members through email <br />Or<br />
@@ -32,7 +32,7 @@ export default function Dashboard() {
                 value={email} 
               />
             </label>
-            {!isPending && <button className="btn">Join Pillow Group!</button>}
+            {!isPending && <button className="btn">Join Clanno Group!</button>}
             {isPending && <button className="btn" disabled>Loading...</button>}
             {error && <p className="error">{error}</p>}
           </form>

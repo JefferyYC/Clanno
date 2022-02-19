@@ -12,13 +12,13 @@ export default function Survey() {
   return (
     <>
         <div className="intro">
-        <p>Pillow allows every member to send weekly updates to other members via a simple question and answer format, similar to a survey. <br />
+        <p>Clanno allows every member to send weekly updates to other members via a simple question and answer format, similar to a survey. <br />
            Questions will be released in the beginning of the week and the results will be posted at the end of the week for members to comment on. <br />
           The survey refreshes weekly.</p>
         </div>
         {surveyStatus===0 && 
         <>
-          <p>Nobody has initiated the pillow survey for this week...</p>
+          <p>Nobody has initiated the clanno survey for this week...</p>
           <button className="btn" onClick={() => initiateSurvey(groupId)}>Initate Survey!</button>
           {error && <p className="error">{error}</p>}
         </>

@@ -14,7 +14,7 @@ export default function OnlineUsers() {
 
   return (
     <div className="user-list">
-      <h2>Your Pillow Group</h2>
+      <h2>Your Clanno Group</h2>
       {error && <div>{error}</div>}
       {documents && documents.map(user => (
         <div key={user.id} className="user-list-item">

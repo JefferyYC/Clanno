@@ -9,7 +9,7 @@ import './MemberList.css'
 export default function MemberList({ members }) {
   return (
     <div className="member-list">
-      {members.length === 0 && <p>You are not in a pillow group yet. Start your journey with Pillow now!</p>}
+      {members.length === 0 && <p>You are not in a clanno group yet. Start your journey with Clanno now!</p>}
       {members.map(m => (
         <div key={m.id} className="card">
             <Avatar src={AvatarIcon}/>

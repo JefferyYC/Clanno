@@ -4,7 +4,7 @@ import { useAuthContext } from '../hooks/useAuthContext'
 
 //styles
 import './Navbar.css'
-import Temple from '../assets/pillow.svg'
+import Logo from '../assets/clanno_logo.png'
 
 export default function Navbar() {
     const navigate = useNavigate()
@@ -15,8 +15,8 @@ export default function Navbar() {
         <div className="navbar">
             <ul>
                 <li className='logo'>
-                    <img src={Temple} alt='logo' onClick={() => navigate("/")}></img>
-                    <span>Pillow</span>
+                    <img src={Logo} alt='logo' onClick={() => navigate("/")}></img>
+                    <span>Clanno</span>
                 </li>
 
                 {!user &&    

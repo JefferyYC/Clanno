@@ -29,19 +29,19 @@ export default function Sidebar() {
             <li>
                 <NavLink to="/">
                 <img src={DashboardIcon} alt="dashboard icon" />
-                <span>Pillow Home</span>
+                <span>Clanno Home</span>
                 </NavLink>
             </li>
             <li>
                 <NavLink to="/survey">
                 <img src={AddIcon} alt="add survey icon" />
-                <span>Pillow Survey</span>
+                <span>Clanno Survey</span>
                 </NavLink>
             </li>
             <li>
                 <NavLink to="/news">
                 <img src={AddIcon} alt="view newsletter icon" />
-                <span>Pillow Newsletter</span>
+                <span>Clanno Newsletter</span>
                 </NavLink>
             </li>
             </ul>

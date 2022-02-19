@@ -21,7 +21,7 @@ export default function SurveyForm() {
 
     return (
         <form onSubmit={handleSubmit} className="survey-form">
-            <h2>Your Pillow Survey</h2>
+            <h2>Your Clanno Survey</h2>
             <label>
                 <span>{Q_ONE}</span>
                 <input
